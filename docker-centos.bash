@@ -5,9 +5,8 @@ yum makecache
 yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
-wget https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
-sed -i 's/download.docker.com/mirrors.ustc.edu.cn\/docker-ce/g' docker-ce.repo
-yum-config-manager --add-repo docker-ce.repo
+yum-config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
+sed -i 's/download.docker.com/mirrors.ustc.edu.cn\/docker-ce/g' /etc/yum.repos.d/docker-ce.repo
 yum makecache
 yum install -y docker-ce
 mkdir /etc/docker
