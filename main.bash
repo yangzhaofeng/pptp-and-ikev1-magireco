@@ -25,7 +25,23 @@ bash sniproxy.bash
 
 bash bind9.bash
 
+while :; do echo
+	read -p "请输入用户名: " VPN_USER
+	[ -n "$VPN_USER" ] && break
+done
+
+while :; do echo
+	read -p "请输入密码: " VPN_PASS
+	[ -n "$VPN_PASS" ] && break
+done
+clear
+
 bash pptp.bash
+
+while :; do echo
+	read -p "请输入预共享密钥: " IKEPSK
+	[ -n "$IKEPSK" ] && break
+done
 
 bash ikev1.bash
 
