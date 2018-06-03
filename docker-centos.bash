@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ `yum list installed | grep docker |wc -l` -ne 1 ];then
+if [ `command -v docker |wc -l` -ne 1 ];then
 yum makecache
 yum install -y yum-utils \
   device-mapper-persistent-data \
