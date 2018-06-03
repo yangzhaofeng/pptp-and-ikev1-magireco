@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ `dpkg -l | grep docker |wc -l` -ne 1 ];then
+if [ `command -v docker |wc -l` -ne 1 ];then
 apt-get update
 apt-get install \
 	apt-transport-https \
